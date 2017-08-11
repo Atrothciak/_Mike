@@ -1,0 +1,4 @@
+<meta>	
+	<script src="paliwo.lua" type = "client" cache="false" />
+	<script src="paliwo_s.lua" type = "server" />
+</meta>

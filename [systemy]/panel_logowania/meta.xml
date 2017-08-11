@@ -1,0 +1,5 @@
+<meta>
+	<script src="panel.lua" type = "server" />
+	<script src="panel_c.lua" type = "client" cache = "false" />
+	<file src="muza.mp3" />
+</meta>

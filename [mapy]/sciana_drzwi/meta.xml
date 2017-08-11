@@ -1,0 +1,9 @@
+<meta>
+		
+		<script src = "client.lua" type = "client" cache = "false" />
+		
+		<file src="podloga.txd" />
+		<file src="podloga.col" />
+		<file src="podloga.dff" />
+		
+</meta>

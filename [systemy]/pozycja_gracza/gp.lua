@@ -1,0 +1,5 @@
+addCommandHandler("gp", function( kom)
+local x,y,z = getElementPosition(localPlayer)
+outputChatBox(x.. "" ..y.. "" ..z -1)
+setClipboard ( x..","..y..","..z ) 
+end)
