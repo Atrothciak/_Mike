@@ -1,5 +1,7 @@
 # MTA-1.5-Lua
 
-Nieskończony gamemode do gry MTA. Zakazuje się kopiowania elementów bez zgody autora!
+Zakazuje się kopiowania elementów bez zgody autora!
+
+Autor: Atroth
 
 Kontakt: atroth@interia.pl
