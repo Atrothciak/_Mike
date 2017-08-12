@@ -1,0 +1,13 @@
+<meta>
+	
+		<script src = "client.lua" type = "client" cache = "false" />
+		
+		<file src = "Raleway-Light.ttf" />
+		
+		<export function = "dxDrawEditBox" type = "client" />
+		
+		<export function = "dxEditGetText" type = "client" />
+		
+		<export function = "dxDrawWindow" type = "client" />
+							
+</meta>

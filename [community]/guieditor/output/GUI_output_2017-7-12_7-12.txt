@@ -1,0 +1,20 @@
+
+
+local screenW, screenH = guiGetScreenSize()
+
+addEventHandler("onClientRender", root,
+    function()
+        dxDrawRectangle(screenW * 0.3698, screenH * 0.4204, screenW * 0.2661, screenH * 0.2722, tocolor(99, 99, 99, 215), false)
+        dxDrawText("Wybierz alkohol, następnie kliknij \"Kup\". Aby go wypić, wpisz /wypij.", screenW * 0.3703, screenH * 0.4194, screenW * 0.6359, screenH * 0.4435, tocolor(253, 253, 253, 255), 1.00, "default-bold", "center", "center", false, false, false, false, false)
+        dxDrawRectangle(screenW * 0.4698, screenH * 0.5361, screenW * 0.0688, screenH * 0.0176, tocolor(38, 38, 38, 215), false)
+        dxDrawRectangle(screenW * 0.3755, screenH * 0.5361, screenW * 0.0688, screenH * 0.0176, tocolor(38, 38, 38, 215), false)
+        dxDrawRectangle(screenW * 0.5620, screenH * 0.5361, screenW * 0.0688, screenH * 0.0176, tocolor(38, 38, 38, 215), false)
+        dxDrawText("Piwo(5$,0.15‰.)", screenW * 0.3755, screenH * 0.5370, screenW * 0.4443, screenH * 0.5537, tocolor(255, 255, 255, 255), 1.00, "default-bold", "center", "center", false, false, false, false, false)
+        dxDrawText("Finland(15$,0.5‰.)", screenW * 0.4698, screenH * 0.5361, screenW * 0.5385, screenH * 0.5537, tocolor(255, 255, 255, 255), 1.00, "default-bold", "center", "center", false, false, false, false, false)
+        dxDrawText("Bimber(20$,0.8‰.)", screenW * 0.5620, screenH * 0.5361, screenW * 0.6307, screenH * 0.5537, tocolor(255, 255, 255, 255), 1.00, "default-bold", "center", "center", false, false, false, false, false)
+        dxDrawRectangle(screenW * 0.4135, screenH * 0.6509, screenW * 0.0688, screenH * 0.0185, tocolor(255, 255, 255, 255), false)
+        dxDrawRectangle(screenW * 0.5229, screenH * 0.6509, screenW * 0.0724, screenH * 0.0185, tocolor(255, 255, 255, 255), false)
+        dxDrawText("Kup", screenW * 0.4135, screenH * 0.6491, screenW * 0.4823, screenH * 0.6694, tocolor(2, 2, 2, 255), 1.00, "default", "center", "center", false, false, false, false, false)
+        dxDrawText("Zamknij", screenW * 0.5224, screenH * 0.6500, screenW * 0.5953, screenH * 0.6694, tocolor(2, 2, 2, 255), 1.00, "default", "center", "center", false, false, false, false, false)
+    end
+)

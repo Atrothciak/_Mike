@@ -1,0 +1,20 @@
+
+
+local screenW, screenH = guiGetScreenSize()
+
+addEventHandler("onClientRender", root,
+    function()
+        dxDrawLine((screenW * 0.3609) - 1, (screenH * 0.3667) - 1, (screenW * 0.3609) - 1, screenH * 0.6222, tocolor(0, 0, 0, 255), 1, false)
+        dxDrawLine(screenW * 0.6401, (screenH * 0.3667) - 1, (screenW * 0.3609) - 1, (screenH * 0.3667) - 1, tocolor(0, 0, 0, 255), 1, false)
+        dxDrawLine((screenW * 0.3609) - 1, screenH * 0.6222, screenW * 0.6401, screenH * 0.6222, tocolor(0, 0, 0, 255), 1, false)
+        dxDrawLine(screenW * 0.6401, screenH * 0.6222, screenW * 0.6401, (screenH * 0.3667) - 1, tocolor(0, 0, 0, 255), 1, false)
+        dxDrawRectangle(screenW * 0.3609, screenH * 0.3667, screenW * 0.2792, screenH * 0.2556, tocolor(255, 249, 249, 125), false)
+        dxDrawRectangle(screenW * 0.3724, screenH * 0.5815, screenW * 0.0865, screenH * 0.0194, tocolor(1, 0, 0, 193), false)
+        dxDrawRectangle(screenW * 0.5437, screenH * 0.5815, screenW * 0.0865, screenH * 0.0194, tocolor(1, 0, 0, 193), false)
+        dxDrawText("Zamknij", screenW * 0.5437, screenH * 0.5815, screenW * 0.6302, screenH * 0.6019, tocolor(255, 255, 255, 255), 1.00, "default", "center", "center", false, false, false, false, false)
+        dxDrawText("Kup", screenW * 0.3724, screenH * 0.5806, screenW * 0.4589, screenH * 0.6009, tocolor(255, 255, 255, 255), 1.00, "default", "center", "center", false, false, false, false, false)
+        dxDrawRectangle(screenW * 0.3703, screenH * 0.4037, screenW * 0.0865, screenH * 0.0194, tocolor(1, 0, 0, 193), false)
+        dxDrawText("Rasparadise", screenW * 0.3703, screenH * 0.4028, screenW * 0.4568, screenH * 0.4231, tocolor(255, 255, 255, 255), 1.00, "default", "center", "center", false, false, false, false, false)
+        dxDrawText("Kliknij na alkohol, a następnie kliknij kup.", screenW * 0.3604, screenH * 0.3648, screenW * 0.6401, screenH * 0.3833, tocolor(1, 0, 0, 254), 1.00, "default-bold", "center", "center", false, false, false, false, false)
+    end
+)
