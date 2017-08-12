@@ -6,8 +6,22 @@
 		
 		<export function = "dxDrawEditBox" type = "client" />
 		
-		<export function = "dxEditGetText" type = "client" />
+		<export function = "dxEditBoxGetText" type = "client" />
 		
 		<export function = "dxDrawWindow" type = "client" />
+		
+		<export function = "dxEditBoxSetVisible" type = "client" />
+		
+		<export function = "dxTextSetVisible" type = "client" />
+		
+		<export function = "dxTextDraw" type = "client" />
+		
+		<export function = "setButtonVisible" type = "client" />
+		
+		<export function = "dxDrawButton" type = "client" />
+		
+		<export function = "dxEditBoxSetLetters" type = "client" />
+		
+		<export function = "dxDrawWindowSetVisible" type = "client" />
 							
 </meta>
