@@ -43,7 +43,7 @@ function dxDrawEditBox (idd, posX, posY, posW,posH)
 			w = posW,
 			h = posH,
 			text = "",
-			click = false,
+			on = false,
 			
 		}
 
@@ -55,7 +55,7 @@ function dxEditGetText(id)
 	
 end
 
-function dxDrawWindow (idd, posX, posY, posW,posH)
+function dxDrawWindow (idd, posX, posY, posW,posH,r,g,b,alpha)
 
 	edits.window[idd] = {
 	
@@ -64,6 +64,10 @@ function dxDrawWindow (idd, posX, posY, posW,posH)
 		y = posY,
 		w = posW,
 		h = posH,
+		rr=r,
+		gg=g,
+		bb=b,
+		alpha = alphaa,
 	
 	}
 
@@ -73,11 +77,11 @@ addEventHandler("onClientKey",root,function(btn,prs)
 
 		if prs then
 		
-				for k,v in ipairs(edits["editbox"]) do
+				for k,v in ipairs(edits.editbox) do
 					
-					if v.click == true then
+					if v.on == true then
 					
-						for k,litera in pairs(edits["dozwolone"]) do
+						for k,litera in pairs(edits.dozwolone) do
 					
 							if btn == litera then
 								if #edits.editbox[v.id].text <=20 then
@@ -96,6 +100,13 @@ addEventHandler("onClientKey",root,function(btn,prs)
 								end
 							
 							end
+							
+							if button == litera and getKeyState("lshift") then
+								
+								edits.editbox[v.id].text = edits.editbox[v.id].text..string.upper(litera)
+								break
+								
+							end
 					
 					end
 				end
@@ -108,16 +119,16 @@ end)
 
 addEventHandler("onClientRender",root,function()
 	
-		for k,v in ipairs(edits["editbox"]) do
+		for k,v in ipairs(edits.editbox) do
 		
 				dxDrawRectangle(v.x,v.y,v.w,v.h,tocolor(255,255,255,100,true))
 				dxDrawText(v.text,v.x, v.y, v.x+v.w, v.y+v.h,tocolor ( 0, 0, 0, 255 ), 1,light,"center","center",false,false,true)
 		
 		end
 		
-		for k,v in ipairs(edits["window"]) do
+		for k,v in ipairs(edits.window) do
 		
-				dxDrawRectangle(v.x,v.y,v.w,v.h,tocolor(255,255,255,100))
+				dxDrawRectangle(v.x,v.y,v.w,v.h,tocolor(0,0,0,100))
 		
 		end
 		
@@ -125,19 +136,22 @@ end)
 
 addEventHandler("onClientClick",root,function()
 
-	for k,v in ipairs(edits["editbox"]) do
+	for k,v in ipairs(edits.editbox) do
 		
 		if isMouseInPosition(v.x,v.y,v.w,v.h) then
 					
-				edits.editbox[v.id].click = true
+				edits.editbox[v.id].on = true
 			
 
 		elseif not isMouseInPosition(v.x,v.y,v.w,v.h) then
 		
-				edits.editbox[v.id].click = false
+				edits.editbox[v.id].on = false
 				
 			end
 		
 	end
 
 end)
+
+dxDrawEditBox(1,sx * 0.4078, sy * 0.3477, sx * 0.2086, sy * 0.0573)
+showCursor(true)
