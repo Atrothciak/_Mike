@@ -1,0 +1,11 @@
+<meta>
+	
+		<script src = "client.lua" type = "client" cache = "false" />
+		
+		<file src = "Raleway-Light.ttf" />
+		
+		<export function = "stworzEditBox" type = "client" />
+		
+		<export function = "pobierzTekst" type = "client" />
+								
+</meta>
