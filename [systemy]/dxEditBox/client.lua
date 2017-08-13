@@ -36,15 +36,17 @@ function stworzEditBox (klucz,posX,posY,posS,posW)
 		y = posY,
 		s = posS,
 		w = posW,
-		tekst = "Wpisz tutaj co chcesz!",
-
+		tekst = "Wpisz tutaj coś.",
+		bool = true,
+		aktywny = false,
+		
 	}
 
 end
 
-function pobierzTekst (klucz)
+function pobierzTekst (kl)
 
-	return dxEditBox[v.kl].tekst
+	return dxEditBox[kl].tekst
 
 end
 
@@ -53,9 +55,12 @@ addEventHandler("onClientRender",root,function ()
 
 	for k,v in ipairs(dxEditBox) do
 		
-		dxDrawRectangle(v.x, v.y, v.s, v.w, tocolor(255, 255, 255, 255), false)
-        dxDrawText(v.tekst,v.x, v.y, v.x+v.s, v.y+v.w, tocolor(0, 0, 0, 255), 1.00, light, "center", "center", false, false, false, false, false)
+		if v.bool == true then
 		
+			dxDrawRectangle(v.x, v.y, v.s, v.w, tocolor(255, 255, 255, 255), true)
+			dxDrawText(v.tekst,v.x, v.y, v.x+v.s, v.y+v.w, tocolor(0, 0, 0, 255), 1.00, light, "center", "center", false, false, true, false, false)
+			
+		end
 	end
 
 end)
@@ -70,7 +75,7 @@ addEventHandler("onClientKey",root,function(przycisk,stan)
 				
 					if przycisk == litery then
 						
-						if #dxEditBox[v.kl].tekst <= 16 then
+						if #dxEditBox[v.kl].tekst <= 16 and v.aktywny then
 						
 							dxEditBox[v.kl].tekst = dxEditBox[v.kl].tekst ..litery
 						
@@ -83,6 +88,7 @@ addEventHandler("onClientKey",root,function(przycisk,stan)
 						
 							dxEditBox[v.kl].tekst = usunostatnialitere(dxEditBox[v.kl].tekst)
 							break
+							
 						end
 					
 					end
@@ -93,4 +99,23 @@ addEventHandler("onClientKey",root,function(przycisk,stan)
 
 end)
 
-stworzEditBox(1,screenW * 0.4458, screenH * 0.3824, screenW * 0.1240, screenH * 0.0315)
+addEventHandler("onClientClick",root,function(przycisk,stan)
+	
+		if przycisk and stan then
+			
+			for _,v in ipairs(dxEditBox) do
+				if isMouseInPosition(v.x, v.y, v.s, v.w) then
+				
+					v.aktywny = true
+					
+				elseif not isMouseInPosition(v.x, v.y, v.s, v.w) then
+				
+					v.aktywny = false
+				
+				end
+				
+			end
+			
+		end
+	
+end)
