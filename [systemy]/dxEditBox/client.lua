@@ -36,7 +36,7 @@ function stworzEditBox (klucz,posX,posY,posS,posW)
 		y = posY,
 		s = posS,
 		w = posW,
-		tekst = "Wpisz tutaj coś.",
+		tekst = "",
 		bool = true,
 		aktywny = false,
 		
@@ -47,6 +47,12 @@ end
 function pobierzTekst (kl)
 
 	return dxEditBox[kl].tekst
+
+end
+
+function usunEditBox (kl,bool)
+
+	dxEditBox[kl].bool = bool or false
 
 end
 
