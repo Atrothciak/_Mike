@@ -1,0 +1,10 @@
+<meta>
+		<script src = "client.lua" type = "client" cache = "false" />
+
+		<export function = "stworzInfo" type = "client" />
+
+		<export function = "setInfoBool" type = "client" />
+
+		<file src = "Raleway-Light.ttf" />
+
+</meta>
